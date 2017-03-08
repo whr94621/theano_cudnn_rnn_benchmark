@@ -14,6 +14,7 @@ This is a toy benchmark between cudnn and non-cudnn version rnn implemented by t
 All the test scripts run on the latest **GpuArray** backend of theano. 
 
 ## 2. Benchmarks settings
+Non-CuDNN GRU implementation refers to the [dl4mt-tutorial](https://github.com/nyu-dl/dl4mt-tutorial)
 
 All the GRU layer use 512 dimension input size and 1024 dimension hidden size.
 
@@ -34,7 +35,7 @@ Batch numbers are all 500.
 
 |                  | Compile foward | Compile forward + backward | Run forward       | Run forward + backward |
 |------------------|----------------|----------------------------|-------------------|------------------------|
-| CuDNN gru cell   | 2.4797s        | 14.4189s                   | 1901.69 samples/s | 330.43 samples/s       |
+| CuDNN GRU cell   | 2.4797s        | 14.4189s                   | 1901.69 samples/s | 330.43 samples/s       |
 | non CuDNN        | 5.8573s        | 22.1874s                   | 2507.09 samples/s | 511.18 samples/s       |
 | + no GEMM fusion | 9.8278s        | 29.4779s                   | 2022.11 samples/s | 411.24 samples/s       |
 
